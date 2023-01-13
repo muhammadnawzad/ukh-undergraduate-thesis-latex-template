@@ -9,6 +9,8 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{amsmath}
+\usepackage{titletoc}
+\usepackage{xstring}
 \pagestyle{fancy}
 
 
@@ -193,17 +195,28 @@
 % Format chapter titles
 \titlespacing*{\chapter}{0pt}{-27pt}{20pt}
 \titleformat{\chapter}[block]
-  {\fontsize{16}{18}\bfseries}{Chapter \thechapter}{5pt}{}
+    {\fontsize{16}{18}\bfseries}{Chapter \thechapter}{5pt}{}
 
 % Format section titles
 \titleformat{\section}
-  {\fontsize{14}{16}\bfseries}{\thesection}{5pt}{}
+    {\fontsize{14}{16}\bfseries}{\thesection}{5pt}{}
 
 % Format subsection titles
 \titleformat{\subsection}
-  {\fontsize{12}{14}\bfseries}{\thesubsection}{5pt}{}
+    {\fontsize{12}{14}\bfseries}{\thesubsection}{5pt}{}
 
 % Number of sections and subsections
 \setcounter{secnumdepth}{3}
 \numberwithin{section}{chapter}
 \numberwithin{subsection}{section}
+
+
+% Set table of contents style.
+\renewcommand*\contentsname{Table of Contents}
+
+% if the page number is not a roman character for chapters, don't show the page number, or the dots.
+\titlecontents{chapter}[0em]{\addvspace{10pt}}{Chapter \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{{\IfInteger{\thecontentslabel}{}{.}}}{{\IfInteger{\thecontentslabel}{}{\contentspage}}}}
+
+% section and subsection style for toc
+\titlecontents{section}[2.5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
