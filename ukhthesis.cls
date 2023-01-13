@@ -25,14 +25,14 @@
     \begin{titlepage}
     \centering
     \includegraphics[width=0.4\textwidth]{figures/logo.png} \\[1cm]
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{#1}}}\\
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{#2}}} \\[2.5cm]
+    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{\thesisTitle}}}\\
+    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{\thesisSubtitle}}} \\[2.5cm]
 
     \textcolor[rgb]{1,0.8,0}{\fontsize{12}{14}\textit{By:}} \\
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{16}{18}\textbf{#3}}} \\ [2cm]
+    {\textcolor[rgb]{1,0.8,0}{\fontsize{16}{18}\textbf{\thesisAuthor}}} \\ [2cm]
 
     \textcolor[rgb]{1,0.8,0}{University of Kurdistan Hewlêr\\Erbil, Kurdistan}\\[2cm]
-    \textcolor[rgb]{1,0.8,0}{\fontsize{13}{15}BSc\\#4}
+    \textcolor[rgb]{1,0.8,0}{\fontsize{13}{15}BSc\\\thesisDate}
 
     \end{titlepage}
 }
@@ -42,22 +42,22 @@
     \begin{titlepage}
     \centering
     \includegraphics[width=0.4\textwidth]{figures/logo.png}\\ [-0.75cm]
-    {\fontsize{18}{20}\textbf{#1}}\\
-    {\fontsize{18}{20}\textbf{#2}} \\[1cm]
+    {\fontsize{18}{20}\textbf{\thesisTitle}}\\
+    {\fontsize{18}{20}\textbf{\thesisSubtitle}} \\[1cm]
 
     \fontsize{12}{14}\textit{By}\\
-    {\fontsize{16}{18}\textbf{#3}}\\
-    {\fontsize{12}{14}Student Number: #4}\\[1cm]
+    {\fontsize{16}{18}\textbf{\thesisAuthor}}\\
+    {\fontsize{12}{14}Student Number: {\studentNumber}}\\[1cm]
 
-    \fontsize{12}{14}\textit{A thesis submitted in partial fulfilment of the requirements for the degree of}\\
-    \fontsize{14}{16}{Bachelor of Science in #5}\\[1cm]
+    \fontsize{12}{14}\textit{A thesis submitted in partial fulfillment of the requirements for the degree of}\\
+    \fontsize{14}{16}{Bachelor of Science in {\studentMajor}}\\[1cm]
 
-    {\fontsize{13}{15}Department of #6}\\
-    {\fontsize{13}{15}School of #7}\\
+    {\fontsize{13}{15}Department of {\studentDepartment}}\\
+    {\fontsize{13}{15}School of {\studentSchool}}\\
     {\fontsize{13}{15}University of Kurdistan Hewlêr}\\[1cm]
 
     {\fontsize{13}{15}BSc}\\
-    {\fontsize{13}{15}#8}\\
+    {\fontsize{13}{15}{\thesisDate}}\\
     {\fontsize{13}{15}Erbil, Kurdistan}
     \end{titlepage}
 }
@@ -74,7 +74,7 @@
 
 
 % Set the declaration page
-\newcommand{\declaration}[1]{
+\newcommand{\declaration}[2]{
     \addcontentsline{toc}{chapter}{Declaration}
 
     % start the page count from II and set the format to roman
@@ -87,13 +87,13 @@
 
     {\fontsize{12}{14}
     \begin{justify}
-    #1
+    I hereby declare that this dissertation/thesis entitled: “{#1}“ is my own original work and hereby certify that unless stated, all work contained within this is my own independent research and has not been submitted for the award of any other degree at any institution, except where due acknowledgment is made in the text.
     \end{justify}}
 
     \vspace{1cm}
 
     {\fontsize{12}{14}Signature:} \\ [0.25cm]
-    {\fontsize{12}{14}Name:} \\ [0.25cm]
+    {\fontsize{12}{14}Name: {\thesisAuthor}} \\ [0.25cm]
     {\fontsize{12}{14}Date:}
 
 }
