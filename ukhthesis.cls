@@ -167,3 +167,22 @@
     \clearpage
 }
 
+% Set the dedication page
+\newcommand{\dedication}[2]{
+    \addcontentsline{toc}{chapter}{Dedication}
+
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Dedication}}
+    \end{flushleft}
+
+    {\fontsize{12}{14}
+    \begin{justify}
+        {#2}
+    \end{justify}}
+
+    \vspace{1cm}
+
+    {\fontsize{12}{14}{\thesisAuthor}} \\ [0.25cm]
+    {\fontsize{12}{14}{#1}}
+    \clearpage
+}
