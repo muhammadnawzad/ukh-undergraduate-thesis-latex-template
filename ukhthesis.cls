@@ -186,3 +186,19 @@
     {\fontsize{12}{14}{#1}}
     \clearpage
 }
+
+% Set the acknowledgments page
+\newcommand{\acknowledgments}[1]{
+    \addcontentsline{toc}{chapter}{Acknowledgments}
+
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Acknowledgments}}
+    \end{flushleft}
+
+    {\fontsize{12}{14}
+    \begin{justify}
+        {#1}
+    \end{justify}}
+
+    \clearpage
+}
