@@ -202,3 +202,19 @@
 
     \clearpage
 }
+
+% Set the abstract page
+\newcommand{\ukhAbstract}[1]{
+    \addcontentsline{toc}{chapter}{Abstract}
+
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Abstract}}
+    \end{flushleft}
+
+    {\fontsize{12}{14}
+    \begin{justify}
+        {#1}
+    \end{justify}}
+
+    \clearpage
+}
