@@ -95,5 +95,44 @@
     {\fontsize{12}{14}Signature:} \\ [0.25cm]
     {\fontsize{12}{14}Name: {\thesisAuthor}} \\ [0.25cm]
     {\fontsize{12}{14}Date:}
-
+    \clearpage
 }
+
+% Set the supervisor's certificate page
+\newcommand{\supervisorCertificate}[0]{
+    \addcontentsline{toc}{chapter}{Supervisor's Certificate}
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Supervisor’s Certificate}}
+    \end{flushleft}
+    {\fontsize{12}{14}
+    This dissertation/thesis has been written under my supervision and has been submitted for the award of the degree of ‘Bachelor of Science’ in ‘{\studentMajor}’ with my approval as supervisor.
+    }\\
+    \vspace{1cm}
+
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Name} \\ [1cm]
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \\
+    {\fontsize{12}{14}Date} \\ [1cm]
+
+    {\fontsize{12}{14}\textbf{I confirm that all the requirements have been fulfilled.}} \\ [1.5cm]
+
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Name} \\ [1cm]
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Head of Department of} \hspace{5.1cm}
+    {\fontsize{12}{14}Date} \\ [1cm]
+
+    {\fontsize{12}{14}\textbf{I confirm that all the requirements have been fulfilled.}} \\ [1.5cm]
+
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Name} \\ [1cm]
+    \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Dean of School of} \hspace{6cm}
+    {\fontsize{12}{14}Date}
+    \clearpage
+}
+
+
