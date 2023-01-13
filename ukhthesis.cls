@@ -7,6 +7,8 @@
 \usepackage{fontspec}
 \usepackage{ragged2e}
 \usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{amsmath}
 \pagestyle{fancy}
 
 
@@ -187,34 +189,21 @@
     \clearpage
 }
 
-% Set the acknowledgments page
-\newcommand{\acknowledgments}[1]{
-    \addcontentsline{toc}{chapter}{Acknowledgments}
 
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Acknowledgments}}
-    \end{flushleft}
+% Format chapter titles
+\titlespacing*{\chapter}{0pt}{-27pt}{20pt}
+\titleformat{\chapter}[block]
+  {\fontsize{16}{18}\bfseries}{Chapter \thechapter}{5pt}{}
 
-    {\fontsize{12}{14}
-    \begin{justify}
-        {#1}
-    \end{justify}}
+% Format section titles
+\titleformat{\section}
+  {\fontsize{14}{16}\bfseries}{\thesection}{5pt}{}
 
-    \clearpage
-}
+% Format subsection titles
+\titleformat{\subsection}
+  {\fontsize{12}{14}\bfseries}{\thesubsection}{5pt}{}
 
-% Set the abstract page
-\newcommand{\ukhAbstract}[1]{
-    \addcontentsline{toc}{chapter}{Abstract}
-
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Abstract}}
-    \end{flushleft}
-
-    {\fontsize{12}{14}
-    \begin{justify}
-        {#1}
-    \end{justify}}
-
-    \clearpage
-}
+% Number of sections and subsections
+\setcounter{secnumdepth}{3}
+\numberwithin{section}{chapter}
+\numberwithin{subsection}{section}
