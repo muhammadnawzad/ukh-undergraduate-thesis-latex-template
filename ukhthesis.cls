@@ -5,8 +5,10 @@
 \usepackage{graphicx}
 \usepackage[rgb]{xcolor}
 \usepackage{fontspec}
+\usepackage{ragged2e}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+
 
 % Set the margins
 \usepackage[margin=0cm,showframe]{geometry}
@@ -60,7 +62,6 @@
     \end{titlepage}
 }
 
-
 % Set the footer style
 \pagestyle{fancy}
 \fancyhf{}
@@ -70,3 +71,29 @@
 
 % Set page number to the center based on margin, not page size
 \fancyfoot[C]{\hspace*{\dimexpr(\textwidth-\marginparwidth)/8\relax}\thepage}
+
+
+% Set the declaration page
+\newcommand{\declaration}[1]{
+    \addcontentsline{toc}{chapter}{Declaration}
+
+    % start the page count from II and set the format to roman
+    \pagenumbering{Roman}
+    \setcounter{page}{2}
+
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Declaration}}
+    \end{flushleft}
+
+    {\fontsize{12}{14}
+    \begin{justify}
+    #1
+    \end{justify}}
+
+    \vspace{1cm}
+
+    {\fontsize{12}{14}Signature:} \\ [0.25cm]
+    {\fontsize{12}{14}Name:} \\ [0.25cm]
+    {\fontsize{12}{14}Date:}
+
+}
