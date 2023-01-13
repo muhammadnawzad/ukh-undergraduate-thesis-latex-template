@@ -135,4 +135,35 @@
     \clearpage
 }
 
+% Ser the examining committee certification page
+\newcommand{\examiningCommittee}[0]{
+    \addcontentsline{toc}{chapter}{Examining Committee Certification}
+    \begin{flushleft}
+        {\fontsize{16}{18}\textbf{Examining Committee Certification}}
+    \end{flushleft}
+
+    {\fontsize{12}{14}
+    \begin{justify}
+    We certify that we have read this dissertation/thesis: "{{\thesisTitle} {\thesisSubtitle}}" and as a committee have examined the student: "{\thesisAuthor}" in its content and what is related to it. We approve that it meets the standards of a dissertation/thesis for the degree of BSc in {\studentMajor}.
+    \end{justify}}
+
+    \vspace{1cm}
+    \begin{tabular}{@{}l l}
+    \rule{6cm}{0.5pt} & \hspace{1cm} \rule{6cm}{0.5pt} \\
+    {\fontsize{12}{14}Signature} & \hspace{1cm} {\fontsize{12}{14}Signature} \\
+    {\fontsize{12}{14}Name:} & \hspace{1cm} {\fontsize{12}{14}Name:} \\
+    {\fontsize{12}{14}Chairman} & \hspace{1cm} {\fontsize{12}{14}Supervisor} \\
+    {\fontsize{12}{14}Date} & \hspace{1cm}{\fontsize{12}{14}Date} \\
+    \end{tabular}
+
+    \vspace{1.5cm}
+    \begin{tabular}{@{}l l}
+    \rule{6cm}{0.5pt} & \\
+    {\fontsize{12}{14}Signature} & \\
+    {\fontsize{12}{14}Name:} & \\
+    {\fontsize{12}{14}Member} & \\
+    {\fontsize{12}{14}Date} & \\
+    \end{tabular}
+    \clearpage
+}
 
