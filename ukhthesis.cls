@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage[rgb]{xcolor}
 \usepackage{fontspec}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
 
 % Set the margins
 \usepackage[margin=0cm,showframe]{geometry}
@@ -58,3 +60,13 @@
     \end{titlepage}
 }
 
+
+% Set the footer style
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Set page number to the center based on margin, not page size
+\fancyfoot[C]{\hspace*{\dimexpr(\textwidth-\marginparwidth)/8\relax}\thepage}
