@@ -220,3 +220,19 @@
 % section and subsection style for toc
 \titlecontents{section}[2.5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 \titlecontents{subsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+
+% Set the list of figures
+\titlecontents{figure}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+
+
+% Set the list of tables
+\titlecontents{table}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+
+% This removes the extra gap between tables from different chapters
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\@chapter}
+    {\addtocontents{lot}{\protect\addvspace{10\p@}}}
+    {}
+    {}{}
+\makeatother
