@@ -224,12 +224,11 @@
 \titlecontents{section}[2.5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 \titlecontents{subsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
-% Set the list of figures
-\titlecontents{figure}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
-
-
 % Set the list of tables
 \titlecontents{table}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+
+% Set the list of figures
+\titlecontents{figure}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
 % This removes the extra gap between tables from different chapters
 \makeatletter
@@ -258,3 +257,17 @@
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
     \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+
+
+% Sets list of contents, tables, figures, abbreviations, and symbols
+\newcommand{\lists}[0]{
+    \tableofcontents
+    \listoftables
+    \listoffigures
+    \addcontentsline{toc}{chapter}{Table of Contents}
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \include{prelude/list_of_abbreviations.tex}
+    \include{prelude/list_of_symbols.tex}
+    \clearpage
+}
