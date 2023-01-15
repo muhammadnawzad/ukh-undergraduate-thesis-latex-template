@@ -11,7 +11,9 @@
 \usepackage{amsmath}
 \usepackage{titletoc}
 \usepackage{xstring}
-\usepackage[acronym,nonumberlist]{glossaries}
+\usepackage{etoolbox}
+\usepackage{enumitem}
+\usepackage[acronym,nonumberlist,symbols]{glossaries}
 \pagestyle{fancy}
 
 
@@ -230,7 +232,6 @@
 \titlecontents{table}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
 % This removes the extra gap between tables from different chapters
-\usepackage{etoolbox}
 \makeatletter
 \patchcmd{\@chapter}
     {\addtocontents{lot}{\protect\addvspace{10\p@}}}
@@ -249,3 +250,11 @@
 }
 \setglossarystyle{custom}
 \makeglossaries
+
+
+% Set the list of abbreviations and symbols style
+\let\svitem\item%
+\def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
+\newenvironment{leftitemize}
+{\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
+    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
