@@ -14,6 +14,8 @@
 \usepackage{etoolbox}
 \usepackage{enumitem}
 \usepackage[acronym,nonumberlist,symbols]{glossaries}
+\usepackage{mathabx}
+\usepackage[fleqn]{nccmath}
 \pagestyle{fancy}
 
 
@@ -256,7 +258,7 @@
 \def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
-    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+  \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
 
 
 % Sets list of contents, tables, figures, abbreviations, and symbols
@@ -283,3 +285,13 @@
 
 \setlist[enumerate,1]{label={\arabic*.}}
 \setlist[enumerate,2]{label={\alph*.}}
+
+
+% Set the equation style
+\numberwithin{equation}{chapter}
+\makeatletter
+\let\oldtagform@\tagform@
+\renewcommand\tagform@[1]{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+\renewcommand{\eqref}[1]{\textup{\oldtagform@{\ref{#1}}}}
+\makeatother
+
