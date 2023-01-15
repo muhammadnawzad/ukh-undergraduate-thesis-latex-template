@@ -271,3 +271,15 @@
     \include{prelude/list_of_symbols.tex}
     \clearpage
 }
+
+% Set bullet point and numbering style
+\setlist[itemize]{label=\bullet, leftmargin=1.0cm}
+\setlist[enumerate]{label=\arabic*, leftmargin=1.0cm}
+
+\setlist[itemize,1]{label=$\bullet$}
+\setlist[itemize,2]{label=$\circ$}
+\setlist[itemize,3]{label=$\sqbullet$}
+
+
+\setlist[enumerate,1]{label={\arabic*.}}
+\setlist[enumerate,2]{label={\alph*.}}
