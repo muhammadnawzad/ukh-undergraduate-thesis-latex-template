@@ -11,6 +11,7 @@
 \usepackage{amsmath}
 \usepackage{titletoc}
 \usepackage{xstring}
+\usepackage[acronym,nonumberlist]{glossaries}
 \pagestyle{fancy}
 
 
@@ -236,3 +237,15 @@
     {}
     {}{}
 \makeatother
+
+
+% Set the glossary style
+\newglossarystyle{custom}
+{
+    \renewcommand*{\glossentry}[2]{%
+        \item[\glsentrytext{##1}] ##2
+        \glsentryitem \textbf{--} \glossentrydesc{##1}\par
+    }
+}
+\setglossarystyle{custom}
+\makeglossaries
