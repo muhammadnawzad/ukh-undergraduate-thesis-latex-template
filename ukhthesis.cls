@@ -3,7 +3,7 @@
 \usepackage{lmodern}
 \usepackage{chngcntr}
 \usepackage{graphicx}
-\usepackage[rgb]{xcolor}
+\usepackage[RGB,table,xcdraw]{xcolor}
 \usepackage{fontspec}
 \usepackage{ragged2e}
 \usepackage{fancyhdr}
@@ -16,7 +16,12 @@
 \usepackage[acronym,nonumberlist,symbols]{glossaries}
 \usepackage{mathabx}
 \usepackage[fleqn]{nccmath}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{hhline}
 \pagestyle{fancy}
+
 
 
 % Set the margins
@@ -258,7 +263,7 @@
 \def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
-  \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
 
 
 % Sets list of contents, tables, figures, abbreviations, and symbols
@@ -287,7 +292,7 @@
 \setlist[enumerate,2]{label={\alph*.}}
 
 
-% Set the equation style
+% Number equations within individual chapters
 \numberwithin{equation}{chapter}
 \makeatletter
 \let\oldtagform@\tagform@
@@ -295,3 +300,7 @@
 \renewcommand{\eqref}[1]{\textup{\oldtagform@{\ref{#1}}}}
 \makeatother
 
+% Set the figure and table caption style
+\usepackage{floatrow}
+\usepackage[font=small]{caption}
+\floatsetup[table]{capposition=top}
