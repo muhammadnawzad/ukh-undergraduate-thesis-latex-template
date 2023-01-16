@@ -258,15 +258,34 @@
 \makeglossaries
 
 
+% Workaround (Part 1) to fix the issue with \glsaddall adding an extra page before the glossary
+\newcommand{\newglossarypredefine}[0]{
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{G\arabic{page}}
+    \addcontentsline{toc}{chapter}{Glossary}
+}
+
+% Workaround (Part 2) to fix the issue with \glsaddall adding an extra page before the glossary
+\newcommand{\newprintglossary}[0]{
+    \glsaddall
+
+    \let\oldclearpage\clearpage
+    \let\clearpage\relax
+    \printglossary
+    \let\clearpage\oldclearpage
+    \restoregeometry
+}
+
+
 % Set the list of abbreviations and symbols style
 \let\svitem\item%
 \def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
-    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+  \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
 
 
-% Sets list of contents, tables, figures, abbreviations, and symbols
+% Sets the list of contents, tables, figures, abbreviations, and symbols
 \newcommand{\lists}[0]{
     \tableofcontents
     \listoftables
@@ -287,7 +306,6 @@
 \setlist[itemize,2]{label=$\circ$}
 \setlist[itemize,3]{label=$\sqbullet$}
 
-
 \setlist[enumerate,1]{label={\arabic*.}}
 \setlist[enumerate,2]{label={\alph*.}}
 
@@ -304,3 +322,31 @@
 \usepackage{floatrow}
 \usepackage[font=small]{caption}
 \floatsetup[table]{capposition=top}
+
+
+% Defines a new end page taking the name used to define the chapter and the letter that is set before the pagination number
+\newcommand{\newendpage}[2]{
+    \chapter*{#1}
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{#2\arabic{page}}
+    \addcontentsline{toc}{chapter}{#1}
+}
+
+
+% Defines a new appendix chapter (takes appendix chapter sequential occurrence number)
+\newcommand{\newappendix}[1]{
+    \chapter*{Appendix #1}
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \setcounter{page}{#1}
+    \renewcommand{\thepage}{A\arabic{page}}
+    \addcontentsline{toc}{chapter}{Appendix #1}
+}
+
+% Defines a new section for appendix (takes appendix section sequential occurrence number)
+\newcommand{\newappendixsection}[1]{
+    \newpage
+    \section*{Appendix \thechapter.#1}
+    \setcounter{section}{#1}
+    \renewcommand{\thepage}{A\thesection}
+}
