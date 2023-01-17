@@ -1,0 +1,21 @@
+% Used to remove parenthesis around the year
+\renewcommand\harvardyearleft{\unskip, }
+\renewcommand\harvardyearright[1]{.}
+
+% Sets chapter title, adds to table of content, and sets pagination 
+\renewcommand\bibname{References}
+\renewcommand{\bibsection}{\chapter*{\bibname}}
+\setcounter{page}{1}
+\renewcommand{\thepage}{R\arabic{page}}
+\addcontentsline{toc}{chapter}{References}
+
+% removes the indentation set before lines proceeding first line
+\setlength\bibhang{0in}
+
+% removes single quotations 
+\catcode`'=9
+\catcode``=9
+
+% Sets style and chooses bib destination
+\bibliographystyle{agsm}
+\bibliography{references}
