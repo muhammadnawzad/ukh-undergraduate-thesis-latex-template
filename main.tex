@@ -1,9 +1,15 @@
+% This is the main file that should be compiled. Comment out any chapter not needed.
+% Add chapters as you wish in the "chapters" folder and make sure to include them below here.
+% Try not to edit ukhthesis.cls however if any further extension or customization is needed go ahead and do it there.
+% Please create an issue on the GitHub repository in case any issue is faced.
+% Please Do NOT comment out required files.
+
 \documentclass[12pt]{ukhthesis}
 
 \begin{document}
 
-\include{prelude/preliminaries.tex}
-\include{prelude/dedication.tex}
+\include{prelude/preliminaries.tex} % required
+\include{prelude/dedication.tex} 
 \include{prelude/acknowledgments.tex}
 \include{prelude/abstract.tex}
 \lists
@@ -15,14 +21,14 @@
 \include{chapters/results_and_discussions.tex}
 \include{chapters/conclusions_and_recommendations.tex}
 
-\include{references/references.tex}
-\include{endpages/glossary.tex}
+\include{references/references.tex} % required
+\include{endpages/glossary.tex} 
 \include{endpages/appendices.tex}
 \include{endpages/published_papers.tex}
 \include{endpages/bibliography.tex}
 \include{endpages/index.tex}
 
-\include{endpages/abstract_kurdish.tex}
-\include{endpages/abstract_arabic.tex}
+\include{endpages/abstract/abstract_kurdish.tex}
+\include{endpages/abstract/abstract_arabic.tex}
 
 \end{document}

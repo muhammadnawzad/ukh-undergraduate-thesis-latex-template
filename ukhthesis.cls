@@ -16,7 +16,7 @@
 \usepackage[acronym,nonumberlist,symbols]{glossaries}
 \usepackage{mathabx}
 \usepackage[fleqn]{nccmath}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{hhline}
@@ -24,7 +24,7 @@
 \pagestyle{fancy}
 
 % Set the margins
-\usepackage[margin=0cm,showframe]{geometry}
+\usepackage[margin=0cm]{geometry} %showframe
 \geometry{left=3cm,right=2.50cm,top=2.50cm,bottom=2.50cm}
 \setlength{\footskip}{1.25cm}
 \raggedright
@@ -88,15 +88,12 @@
 
 % Set the declaration page
 \newcommand{\declaration}[2]{
-    \addcontentsline{toc}{chapter}{Declaration}
-
     % start the page count from II and set the format to roman
     \pagenumbering{Roman}
     \setcounter{page}{2}
 
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Declaration}}
-    \end{flushleft}
+    \chapter*{Declaration}
+    \addcontentsline{toc}{chapter}{Declaration}
 
     {\fontsize{12}{14}
     \begin{justify}
@@ -113,10 +110,9 @@
 
 % Set the supervisor's certificate page
 \newcommand{\supervisorCertificate}[0]{
+    \chapter*{Supervisor's Certificate}
     \addcontentsline{toc}{chapter}{Supervisor's Certificate}
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Supervisor’s Certificate}}
-    \end{flushleft}
+
     {\fontsize{12}{14}
     This dissertation/thesis has been written under my supervision and has been submitted for the award of the degree of ‘Bachelor of Science’ in ‘{\studentMajor}’ with my approval as supervisor.
     }\\
@@ -150,10 +146,8 @@
 
 % Ser the examining committee certification page
 \newcommand{\examiningCommittee}[0]{
+    \chapter*{Examining Committee Certification}
     \addcontentsline{toc}{chapter}{Examining Committee Certification}
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Examining Committee Certification}}
-    \end{flushleft}
 
     {\fontsize{12}{14}
     \begin{justify}
@@ -182,11 +176,8 @@
 
 % Set the dedication page
 \newcommand{\dedication}[2]{
+    \chapter*{Dedication}
     \addcontentsline{toc}{chapter}{Dedication}
-
-    \begin{flushleft}
-        {\fontsize{16}{18}\textbf{Dedication}}
-    \end{flushleft}
 
     {\fontsize{12}{14}
     \begin{justify}
@@ -355,3 +346,13 @@
     \renewcommand{\thepage}{A\thesection}
 }
 
+% no compression on pdf generation
+\special{dvipdfmx:config z 0}
+
+% Same as newendpage but for abstract pages
+\newcommand{\newabstractendpage}[2]{
+    \chapter*{#1}
+    \setcounter{page}{1}
+    \renewcommand{\thepage}{}
+    \addcontentsline{toc}{chapter}{#1}
+}
