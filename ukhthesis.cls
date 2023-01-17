@@ -20,9 +20,8 @@
 \usepackage{multirow}
 \usepackage{colortbl}
 \usepackage{hhline}
+\usepackage{natbib}
 \pagestyle{fancy}
-
-
 
 % Set the margins
 \usepackage[margin=0cm,showframe]{geometry}
@@ -124,7 +123,7 @@
     \vspace{1cm}
 
     \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
-    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Signature} \hspace{7.55cm}
     {\fontsize{12}{14}Name} \\ [1cm]
     \rule{8.2cm}{0.5pt} \hspace{1cm} \\
     {\fontsize{12}{14}Date} \\ [1cm]
@@ -132,7 +131,7 @@
     {\fontsize{12}{14}\textbf{I confirm that all the requirements have been fulfilled.}} \\ [1.5cm]
 
     \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
-    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Signature} \hspace{7.55cm}
     {\fontsize{12}{14}Name} \\ [1cm]
     \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
     {\fontsize{12}{14}Head of Department of} \hspace{5.1cm}
@@ -141,7 +140,7 @@
     {\fontsize{12}{14}\textbf{I confirm that all the requirements have been fulfilled.}} \\ [1.5cm]
 
     \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
-    {\fontsize{12}{14}Signature} \hspace{7.45cm}
+    {\fontsize{12}{14}Signature} \hspace{7.55cm}
     {\fontsize{12}{14}Name} \\ [1cm]
     \rule{8.2cm}{0.5pt} \hspace{1cm} \rule{6cm}{0.5pt} \\
     {\fontsize{12}{14}Dean of School of} \hspace{6cm}
@@ -167,7 +166,7 @@
     {\fontsize{12}{14}Signature} & \hspace{1cm} {\fontsize{12}{14}Signature} \\
     {\fontsize{12}{14}Name:} & \hspace{1cm} {\fontsize{12}{14}Name:} \\
     {\fontsize{12}{14}Chairman} & \hspace{1cm} {\fontsize{12}{14}Supervisor} \\
-    {\fontsize{12}{14}Date} & \hspace{1cm}{\fontsize{12}{14}Date} \\
+    {\fontsize{12}{14}Date} & \hspace{1.1cm}{\fontsize{12}{14}Date} \\
     \end{tabular}
 
     \vspace{1.5cm}
@@ -203,15 +202,17 @@
 
 
 % Format chapter titles
-\titlespacing*{\chapter}{0pt}{-27pt}{20pt}
+\titlespacing*{\chapter}{0pt}{-27pt}{10pt}
 \titleformat{\chapter}[block]
     {\fontsize{16}{18}\bfseries}{Chapter \thechapter}{5pt}{}
 
 % Format section titles
+\titlespacing*{\section}{0pt}{0pt}{5pt}
 \titleformat{\section}
     {\fontsize{14}{16}\bfseries}{\thesection}{5pt}{}
 
 % Format subsection titles
+\titlespacing*{\subsection}{0pt}{0pt}{2.5pt}
 \titleformat{\subsection}
     {\fontsize{12}{14}\bfseries}{\thesubsection}{5pt}{}
 
@@ -224,15 +225,16 @@
 % Set table of contents style.
 \renewcommand*\contentsname{Table of Contents}
 
-% if the page number is not a roman character for chapters, don't show the page number, or the dots.
-\titlecontents{chapter}[0em]{\addvspace{10pt}}{Chapter \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{{\IfInteger{\thecontentslabel}{}{.}}}{{\IfInteger{\thecontentslabel}{}{\contentspage}}}}
+% if the page number is not a roman character for chapters, don't show the dots.
+\titlecontents{chapter}[0em]{\addvspace{10pt}}{Chapter \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{{\IfInteger{\thecontentslabel}{}{.}}}{\contentspage}}
+% {{\IfInteger{\thecontentslabel}{}{\contentspage}}}} use this to hide the number
 
 % section and subsection style for toc
 \titlecontents{section}[2.5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 \titlecontents{subsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
 % Set the list of tables
-\titlecontents{table}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{table}[0em]{\addvspace{10pt}}{Table \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
 % Set the list of figures
 \titlecontents{figure}[0em]{\addvspace{10pt}}{Figure \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
@@ -282,7 +284,7 @@
 \def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
-  \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
 
 
 % Sets the list of contents, tables, figures, abbreviations, and symbols
@@ -308,6 +310,7 @@
 
 \setlist[enumerate,1]{label={\arabic*.}}
 \setlist[enumerate,2]{label={\alph*.}}
+\setlist{itemsep=0.1ex}
 
 
 % Number equations within individual chapters
@@ -317,6 +320,7 @@
 \renewcommand\tagform@[1]{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
 \renewcommand{\eqref}[1]{\textup{\oldtagform@{\ref{#1}}}}
 \makeatother
+
 
 % Set the figure and table caption style
 \usepackage{floatrow}
@@ -343,10 +347,11 @@
     \addcontentsline{toc}{chapter}{Appendix #1}
 }
 
-% Defines a new section for appendix (takes appendix section sequential occurrence number)
+% Defines a new section for the appendix (takes appendix section sequential occurrence number)
 \newcommand{\newappendixsection}[1]{
     \newpage
     \section*{Appendix \thechapter.#1}
     \setcounter{section}{#1}
     \renewcommand{\thepage}{A\thesection}
 }
+

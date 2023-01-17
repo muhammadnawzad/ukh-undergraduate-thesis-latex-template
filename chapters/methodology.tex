@@ -1,9 +1,7 @@
-\pagenumbering{arabic}
-
 \chapter{Theoretical Approach or Different Title}
 
 \begin{justify}
-    Manual spacing between paragraphs are not permitted 
+    Manual spacing between paragraphs are not permitted
 \end{justify}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,7 +12,7 @@
     Content..........................\\
     Content..........................\\
     Content..........................
-    
+
 \end{justify}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,21 +20,21 @@
 \begin{justify}
 
     It's essential to take the following consideration when inserting Figures.
-    
-    \begin{itemize}
+
+    \begin{itemize}[itemsep=0.5ex]
         \item Figures should be original with good resolution and do not violate copy rights, other people work must be referenced.
         \item Figure size have to be consistent through the thesis , this means unless necessary figures have to have approximately in same size.
-        \item Figure abbreviation and number in text have to match the caption 
+        \item Figure abbreviation and number in text have to match the caption
         \item If the figure did not fit in the page then bring the text after and put the figure in next page.
     \end{itemize}
 
 
     \begin{figure}[H]
-        \centerline{\includegraphics[width=80mm,scale=1]{figures/figure.jpg}}
+        \centerline{\includegraphics[width=100mm,scale=1]{figures/figure.jpg}}
         \caption{The figure caption}
         \label{fig}
     \end{figure}
-    
+
 \end{justify}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,19 +46,20 @@
 
 
 % use the online editor tool to generate a table like below https://www.latex-tables.com/
+\renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
 \centering
 \caption{The table caption}
 \arrayrulecolor{black}
-\begin{tabular}{|p{2.25cm}|p{1.75cm}|p{1.75cm}|p{7.75cm}|} 
+\begin{tabular}{|p{2.25cm}|p{1.75cm}|p{1.75cm}|p{7.75cm}|}
 \hline
-\rowcolor[rgb]{0.914,0.914,0.914} \multicolumn{1}{|c|}{{\cellcolor[rgb]{0.914,0.914,0.914}}}                                   & \multicolumn{3}{c|}{\textbf{Titles}}                                      \\ 
+\rowcolor[rgb]{0.914,0.914,0.914} \multicolumn{1}{|c|}{{\cellcolor[rgb]{0.914,0.914,0.914}}}                                   & \multicolumn{3}{c|}{\textbf{Titles}}                                      \\
 \hhline{|>{\arrayrulecolor[rgb]{0.914,0.914,0.914}}->{\arrayrulecolor{black}}---|}
-\rowcolor[rgb]{0.914,0.914,0.914} \multicolumn{1}{|c|}{\multirow{-2}{*}{{\cellcolor[rgb]{0.914,0.914,0.914}}\textbf{Heading}}} & \textbf{Title1} & \textbf{Title2} & \textbf{Title3}                       \\ 
+\rowcolor[rgb]{0.914,0.914,0.914} \multicolumn{1}{|c|}{\multirow{-2}{*}{{\cellcolor[rgb]{0.914,0.914,0.914}}\textbf{Heading}}} & \textbf{Title1} & \textbf{Title2} & \textbf{Title3}                       \\
 \hline
-{\cellcolor[rgb]{0.914,0.914,0.914}}Title1                                                                                     &                 &                 & {\cellcolor[rgb]{0.965,0.965,0.965}}  \\ 
+{\cellcolor[rgb]{0.914,0.914,0.914}}Title1                                                                                     &                 &                 & {\cellcolor[rgb]{0.965,0.965,0.965}}  \\
 \hline
-{\cellcolor[rgb]{0.914,0.914,0.914}}Title2                                                                                     &                 &                 &                                       \\ 
+{\cellcolor[rgb]{0.914,0.914,0.914}}Title2                                                                                     &                 &                 &                                       \\
 \hline
 {\cellcolor[rgb]{0.914,0.914,0.914}}Title3                                                                                     &                 &                 &                                       \\
 \hline
@@ -69,7 +68,7 @@
 
 
     If a table spans more than one page then the first raw (Title) should be inserted in the next page
-    
+
 \end{justify}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,21 +101,21 @@
             \end{enumerate}
         \item Content...
     \end{enumerate}
-    
+
 \end{justify}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{New Subsection Title – Equations}
 \begin{justify}
-    
+
    Content............................as in equation 3.1...
     \begin{fleqn}
         \begin{equation}
             Equation = x^2 (y_1 + \overline{z}) \left( \frac{\sqrt[xyz]{x}}{[(A+B) C]} \right)
-            \label{eq:1}    
+            \label{eq:1}
         \end{equation}
    \end{fleqn}
-    
+
 \end{justify}
 
 
