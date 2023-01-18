@@ -356,3 +356,8 @@
     \renewcommand{\thepage}{}
     \addcontentsline{toc}{chapter}{#1}
 }
+
+\usepackage[skip=8pt]{parskip}
+\newcommand{\newendline}[0]{
+    \par \noindent
+}
