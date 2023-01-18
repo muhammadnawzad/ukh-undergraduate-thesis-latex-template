@@ -281,14 +281,14 @@
 % Sets the list of contents, tables, figures, abbreviations, and symbols
 \newcommand{\lists}[0]{
     \tableofcontents
-    \listoftables
-    \listoffigures
+    \setcounter{page}{8}
     \addcontentsline{toc}{chapter}{Table of Contents}
+    \listoftables
     \addcontentsline{toc}{chapter}{List of Tables}
+    \listoffigures
     \addcontentsline{toc}{chapter}{List of Figures}
     \include{prelude/list_of_abbreviations.tex}
     \include{prelude/list_of_symbols.tex}
-    \clearpage
 }
 
 % Set bullet point and numbering style
