@@ -21,6 +21,7 @@
 \usepackage{colortbl}
 \usepackage{hhline}
 \usepackage{natbib}
+\usepackage{vcell}
 \pagestyle{fancy}
 
 % Set the margins
@@ -212,7 +213,6 @@
 \numberwithin{section}{chapter}
 \numberwithin{subsection}{section}
 
-
 % Set table of contents style.
 \renewcommand*\contentsname{Table of Contents}
 
@@ -223,6 +223,7 @@
 % section and subsection style for toc
 \titlecontents{section}[2.5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 \titlecontents{subsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
+\titlecontents{subsubsection}[5em]{\addvspace{10pt}}{\thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
 
 % Set the list of tables
 \titlecontents{table}[0em]{\addvspace{10pt}}{Table \thecontentslabel\hspace{5pt}}{\hspace*{0em}}{\titlerule*[5pt]{.}\contentspage}
@@ -248,6 +249,7 @@
     }
 }
 \setglossarystyle{custom}
+% comment the line below to disable glossaries
 \makeglossaries
 
 
@@ -272,10 +274,10 @@
 
 % Set the list of abbreviations and symbols style
 \let\svitem\item%
-\def\mybox#1{\makebox[2cm][l]{\bfseries#1}}
+\def\mybox#1{\makebox[2.5cm][l]{\bfseries#1}}
 \newenvironment{leftitemize}
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
-    \begin{itemize}[leftmargin=\dimexpr2cm+\labelsep]}{\end{itemize}}
+  \begin{itemize}[leftmargin=\dimexpr2.5cm+\labelsep]}{\end{itemize}}
 
 
 % Sets the list of contents, tables, figures, abbreviations, and symbols
@@ -329,35 +331,20 @@
 
 
 % Defines a new appendix chapter (takes appendix chapter sequential occurrence number)
-\newcommand{\newappendix}[1]{
-    \chapter*{Appendix #1}
-    \setcounter{chapter}{#1}
-    \setcounter{section}{0}
-    \setcounter{page}{#1}
+\newcommand{\newappendices}[0]{
+    \chapter*{Appendices}
+    \setcounter{page}{1}
     \renewcommand{\thepage}{A\arabic{page}}
-    \addcontentsline{toc}{chapter}{Appendix #1}
-}
-
-% Defines a new section for the appendix (takes appendix section sequential occurrence number)
-\newcommand{\newappendixsection}[1]{
-    \newpage
-    \section*{Appendix \thechapter.#1}
-    \setcounter{section}{#1}
-    \renewcommand{\thepage}{A\thesection}
+    \addcontentsline{toc}{chapter}{Appendices}
 }
 
 % no compression on pdf generation
 \special{dvipdfmx:config z 0}
 
-% Same as newendpage but for abstract pages
-\newcommand{\newabstractendpage}[2]{
-    \chapter*{#1}
-    \setcounter{page}{1}
-    \renewcommand{\thepage}{}
-    \addcontentsline{toc}{chapter}{#1}
-}
-
+% Adds paragraph space and removes indent
 \usepackage[skip=8pt]{parskip}
 \newcommand{\newendline}[0]{
     \par \noindent
 }
+
+\usepackage{forloop}
