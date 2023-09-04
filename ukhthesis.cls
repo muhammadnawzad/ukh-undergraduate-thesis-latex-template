@@ -39,14 +39,14 @@
     \begin{titlepage}
     \centering
     \includegraphics[width=0.4\textwidth]{figures/logo.png} \\[1cm]
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{\thesisTitle}}}\\
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{18}{20}\textbf{\thesisSubtitle}}} \\[2.5cm]
+    {{\fontsize{18}{20}\textbf{\thesisTitle}}}\\
+    {\fontsize{18}{20}\textbf{\thesisSubtitle}} \\[2.5cm]
 
-    \textcolor[rgb]{1,0.8,0}{\fontsize{12}{14}\textit{By:}} \\
-    {\textcolor[rgb]{1,0.8,0}{\fontsize{16}{18}\textbf{\thesisAuthor}}} \\ [2cm]
+    {\fontsize{12}{14}\textit{By:}} \\
+    {{\fontsize{16}{18}\textbf{\thesisAuthor}}} \\ [2cm]
 
-    \textcolor[rgb]{1,0.8,0}{University of Kurdistan Hewlêr\\Erbil, Kurdistan}\\[2cm]
-    \textcolor[rgb]{1,0.8,0}{\fontsize{13}{15}BSc\\\thesisDate}
+    {University of Kurdistan Hewlêr\\Erbil, Kurdistan}\\[2cm]
+    {\fontsize{13}{15}BSc\\\thesisDate}
 
     \end{titlepage}
 }
@@ -92,7 +92,7 @@
     % start the page count from II and set the format to roman
     \pagenumbering{Roman}
     \setcounter{page}{2}
-
+    
     \chapter*{Declaration}
     \addcontentsline{toc}{chapter}{Declaration}
 
@@ -113,7 +113,7 @@
 \newcommand{\supervisorCertificate}[0]{
     \chapter*{Supervisor's Certificate}
     \addcontentsline{toc}{chapter}{Supervisor's Certificate}
-
+    
     {\fontsize{12}{14}
     This dissertation/thesis has been written under my supervision and has been submitted for the award of the degree of ‘Bachelor of Science’ in ‘{\studentMajor}’ with my approval as supervisor.
     }\\
@@ -179,7 +179,7 @@
 \newcommand{\dedication}[2]{
     \chapter*{Dedication}
     \addcontentsline{toc}{chapter}{Dedication}
-
+    
     {\fontsize{12}{14}
     \begin{justify}
         {#2}
@@ -263,7 +263,7 @@
 % Workaround (Part 2) to fix the issue with \glsaddall adding an extra page before the glossary
 \newcommand{\newprintglossary}[0]{
     \glsaddall
-
+    
     \let\oldclearpage\clearpage
     \let\clearpage\relax
     \printglossary
@@ -279,6 +279,8 @@
 {\renewcommand\item[1][$\bullet$]{\svitem[\mybox{##1}]}%
   \begin{itemize}[leftmargin=\dimexpr2.5cm+\labelsep]}{\end{itemize}}
 
+
+\let\origaddvspace\addvspace
 
 % Sets the list of contents, tables, figures, abbreviations, and symbols
 \newcommand{\lists}[0]{
