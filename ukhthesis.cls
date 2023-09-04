@@ -350,3 +350,8 @@
 }
 
 \usepackage{forloop}
+
+% Making sure agsm harvard style is not bolding urls
+\makeatletter
+    \def\harvardurl#1{Available at: \textit{\textless#1\textgreater}}
+    \makeatother
